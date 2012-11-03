@@ -1,0 +1,8 @@
+%h1 Matching Directors
+
+%hr
+
+%ul 
+  - @movies.each do |movie|
+    %li= link_to "#{movie.title}", movie_path(movie)
+%hr
