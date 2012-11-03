@@ -14,7 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/'
+      movies_path
 
     when /^the edit page for "([^"]*)"$/
       movie = Movie.find(:first, :conditions=>["title = ?", $1])
@@ -26,7 +26,7 @@ module NavigationHelpers
       
     when /^the Similar Movies page for "([^"]*)"$/
       movie = Movie.find(:first, :conditions=>["title = ?", $1])
-      match_url movie
+      match_path movie
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

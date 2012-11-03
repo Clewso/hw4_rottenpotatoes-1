@@ -4,7 +4,7 @@ class Movie < ActiveRecord::Base
   end
   def self.match_director (movie_id)
     movie = self.find(movie_id)
-    movies = self.where(:title=>movie[:title])
+    movies = self.where("director = ? AND title != ?",movie[:director],movie[:title])
     return movies
   end
 end
